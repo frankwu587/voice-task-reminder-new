@@ -1,0 +1,32 @@
+:root { font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif; color: #172033; background: #f4f7fb; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, textarea { font: inherit; }
+.app { width: min(100%, 720px); margin: auto; padding: 28px 16px 48px; }
+header { margin: 8px 4px 24px; }
+.eyebrow { margin: 0 0 7px; font-size: .88rem; font-weight: 700; color: #5d52d7; letter-spacing: .08em; }
+h1 { margin: 0; font-size: clamp(1.7rem, 7vw, 2.35rem); line-height: 1.25; }
+.intro { margin: 10px 0 0; color: #657086; }
+.composer, .task-card { background: #fff; border: 1px solid #e4e9f1; border-radius: 18px; box-shadow: 0 7px 20px rgba(24, 39, 75, .05); }
+.composer { padding: 18px; }
+.composer label { font-weight: 700; display: block; margin-bottom: 9px; }
+textarea { width: 100%; resize: vertical; min-height: 88px; padding: 13px; border: 1px solid #cdd5e2; border-radius: 12px; color: #172033; outline-color: #6256d8; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+button { min-height: 48px; border: 0; border-radius: 12px; background: #5d52d7; color: #fff; font-weight: 700; cursor: pointer; padding: 10px 12px; }
+button:active { transform: scale(.98); }
+button.secondary { background: #ebe9ff; color: #4036a3; }
+button:disabled { opacity: .6; cursor: wait; }
+.status, .preview { min-height: 1.25em; margin: 10px 2px 0; font-size: .9rem; }
+.status { color: #a04732; }.preview { color: #39724e; }
+.task-groups { margin-top: 28px; display: grid; gap: 25px; }
+.task-section h2 { display: flex; align-items: center; justify-content: space-between; font-size: 1.05rem; margin: 0 3px 10px; }
+h2 span { font-size: .78rem; padding: 3px 9px; border-radius: 999px; background: #e7eaf2; color: #536076; }
+.task-list { display: grid; gap: 10px; }.task-list:empty::after { content: "目前沒有任務"; display: block; padding: 14px; color: #8a94a8; text-align: center; border: 1px dashed #d6dce7; border-radius: 14px; }
+.task-card { padding: 15px; }.task-top { display: flex; align-items: flex-start; gap: 10px; }.task-text { flex: 1; min-width: 0; }
+h3 { margin: 0; font-size: 1.05rem; line-height: 1.4; }.reminder { margin: 5px 0 0; color: #5d52d7; font-size: .9rem; font-weight: 600; }
+.original { margin: 12px 0; padding: 9px 10px; background: #f5f6fa; border-radius: 9px; color: #687287; font-size: .84rem; word-break: break-word; }
+.check-wrap { position: relative; width: 25px; height: 25px; flex: 0 0 25px; cursor: pointer; }.check-wrap input { opacity: 0; position: absolute; }.custom-check { display: grid; width: 25px; height: 25px; place-items: center; color: transparent; border: 2px solid #aab3c5; border-radius: 8px; }.check-wrap input:checked + .custom-check { background: #5d52d7; border-color: #5d52d7; color: white; }
+.delete-button { min-height: 34px; padding: 5px 9px; background: #fff1ef; color: #bf4c3a; font-size: .82rem; }
+.calendar-actions { display: flex; gap: 8px; flex-wrap: wrap; }.calendar-actions button { min-height: 38px; padding: 7px 10px; background: #eef2ff; color: #3447a6; font-size: .82rem; }
+.task-card.completed { opacity: .66; }.task-card.completed h3 { text-decoration: line-through; }
+@media (min-width: 560px) { .app { padding-top: 44px; }.actions { grid-template-columns: 180px 1fr; } }

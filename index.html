@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 語音待辦提醒系統</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">語音行事曆提醒</p>
+      <h1>AI 語音待辦提醒系統</h1>
+      <p class="intro">說出或輸入一句話，自動找出提醒時間。</p>
+    </header>
+
+    <section class="composer" aria-label="新增任務">
+      <label for="task-input">待辦事項</label>
+      <textarea id="task-input" rows="3" placeholder="請輸入待辦事項"></textarea>
+      <div class="actions">
+        <button id="voice-button" class="secondary" type="button">語音輸入</button>
+        <button id="add-button" type="button">新增任務</button>
+      </div>
+      <p id="voice-status" class="status" role="status"></p>
+      <p id="parse-preview" class="preview" aria-live="polite"></p>
+    </section>
+
+    <section class="task-groups" aria-label="任務清單">
+      <section class="task-section"><h2>已到期 <span id="overdue-count">0</span></h2><div id="overdue-list" class="task-list"></div></section>
+      <section class="task-section"><h2>今日任務 <span id="today-count">0</span></h2><div id="today-list" class="task-list"></div></section>
+      <section class="task-section"><h2>待辦任務 <span id="upcoming-count">0</span></h2><div id="upcoming-list" class="task-list"></div></section>
+      <section class="task-section"><h2>已完成 <span id="done-count">0</span></h2><div id="done-list" class="task-list"></div></section>
+    </section>
+  </main>
+  <template id="task-template">
+    <article class="task-card">
+      <div class="task-top"><label class="check-wrap"><input class="complete-toggle" type="checkbox"><span class="custom-check">✓</span></label><div class="task-text"><h3></h3><p class="reminder"></p></div><button class="delete-button" type="button" aria-label="刪除任務">刪除</button></div>
+      <p class="original"></p>
+      <div class="calendar-actions"></div>
+    </article>
+  </template>
+  <script src="script.js"></script>
+</body>
+</html>
